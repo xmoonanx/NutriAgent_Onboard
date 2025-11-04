@@ -1,11 +1,11 @@
-package com.NurtiAgent.Onboard.service;
+package com.NurtiAgent.Onboard.onboarding.service;
 
-import com.NurtiAgent.Onboard.dto.OnboardingRequest;
-import com.NurtiAgent.Onboard.dto.OnboardingResponse;
-import com.NurtiAgent.Onboard.entity.OnboardingInfo;
-import com.NurtiAgent.Onboard.entity.User;
-import com.NurtiAgent.Onboard.repository.OnboardingInfoRepository;
-import com.NurtiAgent.Onboard.repository.UserRepository;
+import com.NurtiAgent.Onboard.onboarding.dto.OnboardingRequest;
+import com.NurtiAgent.Onboard.onboarding.dto.OnboardingResponse;
+import com.NurtiAgent.Onboard.onboarding.entity.OnboardingInfo;
+import com.NurtiAgent.Onboard.user.entity.User;
+import com.NurtiAgent.Onboard.onboarding.repository.OnboardingInfoRepository;
+import com.NurtiAgent.Onboard.user.repository.UserRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -21,12 +21,12 @@ public class OnboardingService {
     private final OnboardingInfoRepository onboardingInfoRepository;
     private final UserRepository userRepository;
 
-    /**
-     * 온보딩 정보 저장 (신규 생성 또는 업데이트)
-     * @param request HTTP 요청 (세션에서 userId 추출)
-     * @param onboardingRequest 온보딩 정보 요청 DTO
-     * @return 저장된 온보딩 정보 응답 DTO
-     */
+
+// 온보딩 정보 저장 (신규 생성 또는 업데이트)
+// @param request HTTP 요청 (세션에서 userId 추출)
+//  @param onboardingRequest 온보딩 정보 요청 DTO
+// @return 저장된 온보딩 정보 응답 DTO
+
     @Transactional
     public OnboardingResponse saveOnboardingInfo(HttpServletRequest request, OnboardingRequest onboardingRequest) {
         // 세션에서 userId 추출
@@ -89,11 +89,11 @@ public class OnboardingService {
         return OnboardingResponse.from(savedInfo);
     }
 
-    /**
-     * 온보딩 정보 조회
-     * @param request HTTP 요청 (세션에서 userId 추출)
-     * @return 온보딩 정보 응답 DTO
-     */
+
+//  온보딩 정보 조회
+//  @param request HTTP 요청 (세션에서 userId 추출)
+//  @return 온보딩 정보 응답 DTO
+
     @Transactional(readOnly = true)
     public OnboardingResponse getOnboardingInfo(HttpServletRequest request) {
         // 세션에서 userId 추출
@@ -106,10 +106,8 @@ public class OnboardingService {
         return OnboardingResponse.from(onboardingInfo);
     }
 
-    /**
-     * 온보딩 정보 삭제
-     * @param request HTTP 요청 (세션에서 userId 추출)
-     */
+    // 온보딩 정보 삭제
+
     @Transactional
     public void deleteOnboardingInfo(HttpServletRequest request) {
         // 세션에서 userId 추출
@@ -123,11 +121,8 @@ public class OnboardingService {
         onboardingInfoRepository.delete(onboardingInfo);
     }
 
-    /**
-     * 세션에서 userId 추출
-     * @param request HTTP 요청
-     * @return userId
-     */
+// 세션에서 userId 추출
+
     private Long getUserIdFromSession(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         if (session == null) {

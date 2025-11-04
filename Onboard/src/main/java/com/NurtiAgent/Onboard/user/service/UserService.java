@@ -1,7 +1,7 @@
-package com.NurtiAgent.Onboard.service;
+package com.NurtiAgent.Onboard.user.service;
 
-import com.NurtiAgent.Onboard.entity.User;
-import com.NurtiAgent.Onboard.repository.UserRepository;
+import com.NurtiAgent.Onboard.user.entity.User;
+import com.NurtiAgent.Onboard.user.repository.UserRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -16,11 +16,6 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    /**
-     * 게스트 세션을 생성하고 DB에 저장한 후 게스트 ID를 반환
-     * @param request HTTP 요청 (세션 생성용)
-     * @return 생성된 게스트 ID
-     */
     @Transactional
     public String saveUser(HttpServletRequest request) {
         // 고유한 게스트 ID 생성
@@ -40,11 +35,6 @@ public class UserService {
         return guestId;
     }
 
-    /**
-     * 게스트 ID로 세션을 갱신
-     * @param request HTTP 요청 (세션 갱신용)
-     * @param guestId 게스트 ID
-     */
     @Transactional
     public void renewSession(HttpServletRequest request, String guestId) {
         // 게스트 ID로 사용자 조회
@@ -59,10 +49,6 @@ public class UserService {
         session.setAttribute("userId", user.getId().toString());
     }
 
-    /**
-     * 중복되지 않는 고유한 게스트 ID 생성
-     * @return 고유한 게스트 ID
-     */
     private String generateUniqueGuestId() {
         String guestId;
         do {

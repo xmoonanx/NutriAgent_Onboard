@@ -1,8 +1,8 @@
-package com.NurtiAgent.Onboard.controller;
+package com.NurtiAgent.Onboard.onboarding.controller;
 
-import com.NurtiAgent.Onboard.dto.OnboardingRequest;
-import com.NurtiAgent.Onboard.dto.OnboardingResponse;
-import com.NurtiAgent.Onboard.service.OnboardingService;
+import com.NurtiAgent.Onboard.onboarding.dto.OnboardingRequest;
+import com.NurtiAgent.Onboard.onboarding.dto.OnboardingResponse;
+import com.NurtiAgent.Onboard.onboarding.service.OnboardingService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

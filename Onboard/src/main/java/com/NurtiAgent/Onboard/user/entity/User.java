@@ -1,4 +1,4 @@
-package com.NurtiAgent.Onboard.entity;
+package com.NurtiAgent.Onboard.user.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

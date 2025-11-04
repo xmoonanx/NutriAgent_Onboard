@@ -1,6 +1,6 @@
-package com.NurtiAgent.Onboard.repository;
+package com.NurtiAgent.Onboard.user.repository;
 
-import com.NurtiAgent.Onboard.entity.User;
+import com.NurtiAgent.Onboard.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,7 @@
-package com.NurtiAgent.Onboard.controller;
+package com.NurtiAgent.Onboard.user.controller;
 
-import com.NurtiAgent.Onboard.dto.GuestIdData;
-import com.NurtiAgent.Onboard.service.UserService;
+import com.NurtiAgent.Onboard.user.dto.GuestIdData;
+import com.NurtiAgent.Onboard.user.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

@@ -1,4 +1,4 @@
-package com.NurtiAgent.Onboard.dto;
+package com.NurtiAgent.Onboard.user.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 

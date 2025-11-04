@@ -1,4 +1,4 @@
-package com.NurtiAgent.Onboard.entity;
+package com.NurtiAgent.Onboard.onboarding.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import com.NurtiAgent.Onboard.user.entity.User;
 
 @Entity
 @Table(name = "onboarding_info")

@@ -1,7 +1,7 @@
-package com.NurtiAgent.Onboard.dto;
+package com.NurtiAgent.Onboard.onboarding.dto;
 
-import com.NurtiAgent.Onboard.entity.OnboardingInfo;
-import com.NurtiAgent.Onboard.entity.OnboardingInfo.*;
+import com.NurtiAgent.Onboard.onboarding.entity.OnboardingInfo;
+import com.NurtiAgent.Onboard.onboarding.entity.OnboardingInfo.*;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.time.LocalDateTime;
