@@ -44,3 +44,20 @@ src/test/resources/
 # Test reports
 build/reports/tests/
 build/test-results/
+
+### Docker ###
+# Docker logs and data
+logs/
+*.log
+# Docker volumes data (if any)
+docker-data/
+
+### Environment Variables ###
+# 보안을 위해 환경변수 파일은 Git에서 제외
+.env
+.env.local
+.env.*.local
+
+### Application ###
+# Application logs
+application*.log
