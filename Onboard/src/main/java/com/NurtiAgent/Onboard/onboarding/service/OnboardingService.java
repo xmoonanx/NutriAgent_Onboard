@@ -59,8 +59,8 @@ public class OnboardingService {
                     .dislikedFoods(onboardingRequest.dislikedFoods() != null
                             ? new ArrayList<>(onboardingRequest.dislikedFoods())
                             : new ArrayList<>())
-                    .healthConditions(onboardingRequest.healthConditions() != null
-                            ? new ArrayList<>(onboardingRequest.healthConditions())
+                    .diseases(onboardingRequest.diseases() != null
+                            ? new ArrayList<>(onboardingRequest.diseases())
                             : new ArrayList<>())
                     .build();
         } else {
@@ -80,8 +80,8 @@ public class OnboardingService {
             onboardingInfo.setDislikedFoods(onboardingRequest.dislikedFoods() != null
                     ? new ArrayList<>(onboardingRequest.dislikedFoods())
                     : new ArrayList<>());
-            onboardingInfo.setHealthConditions(onboardingRequest.healthConditions() != null
-                    ? new ArrayList<>(onboardingRequest.healthConditions())
+            onboardingInfo.setDiseases(onboardingRequest.diseases() != null
+                    ? new ArrayList<>(onboardingRequest.diseases())
                     : new ArrayList<>());
         }
 

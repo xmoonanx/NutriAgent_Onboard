@@ -60,6 +60,6 @@ public record OnboardingRequest(
         @Schema(description = "질환 정보 리스트", example = "[\"DIABETES\", \"HYPERTENSION\"]",
                 allowableValues = {"NONE", "ALLERGY", "DIABETES", "HYPERTENSION", "HYPERLIPIDEMIA",
                                    "GOUT", "KIDNEY_DISEASE", "LIVER_DISEASE", "THYROID_DISEASE"})
-        List<HealthCondition> healthConditions
+        List<Disease> diseases
 ) {
 }

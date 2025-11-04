@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -60,23 +62,19 @@ public class OnboardingInfo {
     @Enumerated(EnumType.STRING)
     private MealPattern mealPattern;
 
-    // 음식 선호도
-    @ElementCollection
-    @CollectionTable(name = "preferred_foods", joinColumns = @JoinColumn(name = "onboarding_info_id"))
-    @Column(name = "food")
+    // 음식 선호도 - JSON으로 저장
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(name = "preferred_foods", columnDefinition = "jsonb")
     private List<String> preferredFoods;
 
-    @ElementCollection
-    @CollectionTable(name = "disliked_foods", joinColumns = @JoinColumn(name = "onboarding_info_id"))
-    @Column(name = "food")
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(name = "disliked_foods", columnDefinition = "jsonb")
     private List<String> dislikedFoods;
 
-    // 질환 정보
-    @ElementCollection
-    @CollectionTable(name = "health_conditions", joinColumns = @JoinColumn(name = "onboarding_info_id"))
-    @Column(name = "condition")
-    @Enumerated(EnumType.STRING)
-    private List<HealthCondition> healthConditions;
+    // 질환 정보 - JSON으로 저장
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(name = "diseases", columnDefinition = "jsonb")
+    private List<Disease> diseases;
 
     @Column(nullable = false)
     private LocalDateTime createdAt;
@@ -161,7 +159,7 @@ public class OnboardingInfo {
         }
     }
 
-    public enum HealthCondition {
+    public enum Disease {
         NONE("없음"),
         ALLERGY("알레르기"),
         DIABETES("당뇨"),
@@ -174,7 +172,7 @@ public class OnboardingInfo {
 
         private final String description;
 
-        HealthCondition(String description) {
+        Disease(String description) {
             this.description = description;
         }
 

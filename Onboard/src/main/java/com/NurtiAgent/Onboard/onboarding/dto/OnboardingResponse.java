@@ -46,7 +46,7 @@ public record OnboardingResponse(
         List<String> dislikedFoods,
 
         @Schema(description = "질환 정보 리스트", example = "[\"DIABETES\", \"HYPERTENSION\"]")
-        List<HealthCondition> healthConditions,
+        List<Disease> diseases,
 
         @Schema(description = "생성 시간", example = "2025-01-15T10:30:00")
         LocalDateTime createdAt,
@@ -68,7 +68,7 @@ public record OnboardingResponse(
                 onboardingInfo.getMealPattern(),
                 onboardingInfo.getPreferredFoods(),
                 onboardingInfo.getDislikedFoods(),
-                onboardingInfo.getHealthConditions(),
+                onboardingInfo.getDiseases(),
                 onboardingInfo.getCreatedAt(),
                 onboardingInfo.getUpdatedAt()
         );
