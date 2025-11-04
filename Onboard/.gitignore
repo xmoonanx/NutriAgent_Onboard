@@ -35,3 +35,12 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Test ###
+# Test source code
+src/test/
+# Test resources
+src/test/resources/
+# Test reports
+build/reports/tests/
+build/test-results/
