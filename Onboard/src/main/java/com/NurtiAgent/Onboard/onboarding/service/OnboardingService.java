@@ -23,10 +23,6 @@ public class OnboardingService {
 
 
 // 온보딩 정보 저장 (신규 생성 또는 업데이트)
-// @param request HTTP 요청 (세션에서 userId 추출)
-//  @param onboardingRequest 온보딩 정보 요청 DTO
-// @return 저장된 온보딩 정보 응답 DTO
-
     @Transactional
     public OnboardingResponse saveOnboardingInfo(HttpServletRequest request, OnboardingRequest onboardingRequest) {
         // 세션에서 userId 추출
@@ -91,9 +87,6 @@ public class OnboardingService {
 
 
 //  온보딩 정보 조회
-//  @param request HTTP 요청 (세션에서 userId 추출)
-//  @return 온보딩 정보 응답 DTO
-
     @Transactional(readOnly = true)
     public OnboardingResponse getOnboardingInfo(HttpServletRequest request) {
         // 세션에서 userId 추출
